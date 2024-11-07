@@ -7,13 +7,13 @@ import {
   Where,
 } from '@loopback/repository';
 import {
-  post,
-  param,
+  del,
   get,
   getModelSchemaRef,
+  param,
   patch,
+  post,
   put,
-  del,
   requestBody,
   response,
 } from '@loopback/rest';
@@ -130,14 +130,16 @@ export class TodoController {
   }
 
   @put('/todos/{id}')
-  @response(204, {
+  @response(200, {
     description: 'Todo PUT success',
+    content: {'application/json': {schema:getModelSchemaRef(Todo)} },
   })
   async replaceById(
     @param.path.number('id') id: number,
     @requestBody() todo: Todo,
-  ): Promise<void> {
+  ): Promise<Todo> {
     await this.todoRepository.replaceById(id, todo);
+    return todo;
   }
 
   @del('/todos/{id}')
