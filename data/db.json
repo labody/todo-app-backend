@@ -5,18 +5,12 @@
   "models": {
     "Todo": {
       "1": "{\"id\":1,\"title\":\"Learn code\",\"isComplete\":false}",
-      "2": "{\"id\":2,\"title\":\"drink water \",\"isComplete\":false}",
-      "3": "{\"id\":3,\"title\":\"play angry birds\",\"isComplete\":false}",
-      "4": "{\"id\":4,\"title\":\"play temple run 2\",\"isComplete\":false}",
+      "2": "{\"id\":2,\"title\":\"drink water\",\"isComplete\":false}",
       "5": "{\"id\":5,\"title\":\"get the book\",\"isComplete\":false}",
       "6": "{\"id\":6,\"title\":\"walk 30km\",\"isComplete\":false}",
       "7": "{\"id\":7,\"title\":\"download images\",\"isComplete\":false}",
       "8": "{\"title\":\"read a book\",\"isComplete\":false,\"id\":8}",
-      "9": "{\"title\":\"Eat breakfast\",\"isComplete\":false,\"id\":9}",
-      "10": "{\"id\":10,\"title\":\"Write a letter\",\"isComplete\":false}",
-      "11": "{\"title\":\"test todo\",\"isComplete\":false,\"id\":11}",
-      "12": "{\"title\":\"another one\",\"isComplete\":false,\"id\":12}",
-      "13": "{\"id\":13,\"title\":\"night wrap\",\"isComplete\":false}"
+      "10": "{\"id\":10,\"title\":\"Write a letter\",\"isComplete\":false}"
     }
   }
 }
