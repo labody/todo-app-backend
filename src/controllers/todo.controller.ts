@@ -37,7 +37,7 @@ export class TodoController {
         'application/json': {
           schema: getModelSchemaRef(Todo, {
             title: 'NewTodo',
-            exclude: ['id'],
+            exclude: ['_id'],
           }),
         },
       },
@@ -105,7 +105,7 @@ export class TodoController {
     },
   })
   async findById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @param.filter(Todo, {exclude: 'where'}) filter?: FilterExcludingWhere<Todo>
   ): Promise<Todo> {
     return this.todoRepository.findById(id, filter);
@@ -116,7 +116,7 @@ export class TodoController {
     description: 'Todo PATCH success',
   })
   async updateById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody({
       content: {
         'application/json': {
@@ -124,7 +124,7 @@ export class TodoController {
         },
       },
     })
-    todo: Todo,
+    todo: Partial<Todo>,
   ): Promise<void> {
     await this.todoRepository.updateById(id, todo);
   }
@@ -135,7 +135,7 @@ export class TodoController {
     content: {'application/json': {schema:getModelSchemaRef(Todo)} },
   })
   async replaceById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody() todo: Todo,
   ): Promise<Todo> {
     await this.todoRepository.replaceById(id, todo);
@@ -146,7 +146,7 @@ export class TodoController {
   @response(204, {
     description: 'Todo DELETE success',
   })
-  async deleteById(@param.path.number('id') id: number): Promise<void> {
+  async deleteById(@param.path.string('id') id: string): Promise<void> {
     await this.todoRepository.deleteById(id);
   }
 }

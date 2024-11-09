@@ -6,7 +6,7 @@ import {Todo, TodoRelations} from '../models';
 
 export class TodoRepository extends DefaultCrudRepository<
   Todo,
-  typeof Todo.prototype.id,
+  typeof Todo.prototype._id,
   TodoRelations
 > {
   constructor(
